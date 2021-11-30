@@ -1,5 +1,5 @@
+import { Member } from "src/members/entities/member.entity";
 import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Member } from "./member.entity";
 
 @Entity()
 export class Band {

@@ -1,6 +1,6 @@
+import { Band } from "src/bands/entities/band.entity";
+import { Instrument } from "src/instruments/entities/instrument.entity";
 import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Band } from "./band.entity";
-import { Instrument } from "./instrument.entity";
 
 @Entity()
 export class Member {
