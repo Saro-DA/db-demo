@@ -31,4 +31,9 @@ export class InstrumentsController {
   remove(@Param('id') id: string) {
     return this.instrumentsService.remove(+id);
   }
+
+  @Get(':id/members')
+  findMembers(@Param('id') id: string) {
+    return this.instrumentsService.findMembers(+id);
+  }
 }
