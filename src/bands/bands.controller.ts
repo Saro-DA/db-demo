@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode } from '@nestjs/common';
 import { BandsService } from './bands.service';
 import { CreateBandDto } from './dto/create-band.dto';
+import { TransferFundsDto } from './dto/transfer-funds.dto';
 import { UpdateBandDto } from './dto/update-band.dto';
 
 @Controller('bands')
@@ -30,5 +31,11 @@ export class BandsController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.bandsService.remove(+id);
+  }
+
+  @Post("transferfunds")
+  @HttpCode(200)
+  transferFunds(@Body() transferFundsDto: TransferFundsDto) {
+    return this.bandsService.transferFunds(transferFundsDto);
   }
 }

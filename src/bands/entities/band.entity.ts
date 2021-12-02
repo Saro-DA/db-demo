@@ -11,4 +11,7 @@ export class Band {
 
     @OneToMany(type => Member, obj => obj.band)
     members: Member[];
+
+    @Column()
+    balance: number;
 }
