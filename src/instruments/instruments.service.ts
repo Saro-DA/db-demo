@@ -37,6 +37,7 @@ export class InstrumentsService {
     return this.connection.getRepository(Instrument)
       .createQueryBuilder('i')
       .leftJoinAndSelect('i.members', 'm')
+      .where('i.id = :id', { id })
       .orderBy('i.id', 'ASC')
       .getMany();
   }
